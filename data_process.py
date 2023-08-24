@@ -6,7 +6,7 @@ from chatglm_tokenizer.tokenization_chatglm import ChatGLMTokenizer
 import pandas as pd
 #from zhconv import convert
 def process_wiki_clean():
-    with open('./data/wikipedia-cn-20230720-filtered.json','r') as f:
+    with open('/data_disk/data/llm/wikipedia-cn-20230720-filtered.json','r') as f:
         data=json.load(f)
     doc_ids=[]
     for line in tqdm(data):
@@ -137,16 +137,16 @@ def process_baidu():
     
 if __name__=="__main__":
     tokenizer=ChatGLMTokenizer(vocab_file='./chatglm_tokenizer/tokenizer.model')
-    # process_wiki_clean()
+    process_wiki_clean()
     # process_medical('./data/medical_book_zh.json','book')
     # process_medical('./data/train_encyclopedia.json','encyclopedia')
     # sft_to_pretrain()
     # sft_process()
     #process_baidu()
     data_path_list=[
-        './data/baidubaike_563w.bin',
-        './data/medical_book.bin',
-        './data/medical_encyclopedia.bin',
+        #'./data/baidubaike_563w.bin',
+        #'./data/medical_book.bin',
+        #'./data/medical_encyclopedia.bin',
         './data/wiki.bin'
     ]
     data_lst=[]
